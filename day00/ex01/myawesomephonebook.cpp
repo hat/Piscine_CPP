@@ -41,31 +41,28 @@ int main()
 	{
 		while (choice != "ADD" && choice != "SEARCH" && choice != "EXIT" )
 			choice = menu();
-		if (choice == "ADD")
-		{
+		if (choice == "ADD") {
 			if (index < 8)
 				newContact[index].addContact();
 			index++;
 		}
-		else if (choice == "SEARCH")
-		{
-			for (int i = 0; i < newContact[0].getNumEntries(); i++)
-			{
+		else if (choice == "SEARCH") {
+			for (int i = 0; i < newContact[0].getNumEntries(); i++) {
 				newContact[i].getBasicInfo();
 				std::cout << std::endl;
 			}
 			std::cout << "Index to view all information: ";
 			std::cin >> searchIndex;
-			std::cin.ignore();
+			//std::cin.ignore();
 			if (searchIndex < newContact[0].getNumEntries())
 				newContact[searchIndex].getAllInfo();
-			else
-				if (!std::cin)
-				{
+			else {
+				if (!std::cin) {
 					std::cin.clear();
 					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 				}
 				std::cout << "Invalid index" << std::endl;
+			}
 		}
 		else if (choice == "EXIT")
 			exit = 0;

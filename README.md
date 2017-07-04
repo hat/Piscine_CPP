@@ -50,3 +50,23 @@ use . to reference member attributes and functions
 
 ## this
 this-> current instance of class
+
+### DAY 00
+get an int with cin and check validity:
+	```cplusplus
+	std::cout << "Index to view all information: ";
+	std::cin >> searchIndex;
+	std::cin.ignore();
+	if (searchIndex < newContact[0].getNumEntries())
+		newContact[searchIndex].getAllInfo();
+	else
+	{
+		if (!std::cin)
+		{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+		std::cout << "Invalid index" << std::endl;
+	}
+	```
+

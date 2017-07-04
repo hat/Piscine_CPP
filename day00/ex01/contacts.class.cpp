@@ -46,7 +46,7 @@ void Contact::addContact()
 void Contact::printInfo(std::string info)
 {
 	if (info.length() > 10)
-		std::cout << std::setw(10) << info.substr(0, 8) + '.' << '|';
+		std::cout << std::setw(10) << info.substr(0, 9) + '.' << '|';
 	else
 		std::cout << std::setw(10) << info << '|';
 }
