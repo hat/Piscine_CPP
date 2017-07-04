@@ -70,3 +70,53 @@ get an int with cin and check validity:
 	}
 	```
 
+
+### DAY 01 - Stack and Heap
+to allocate in the heap use the keyword *new
+
+```cpp
+	int *ptr = new int; // ptr is assigned 4 bytes in the heap
+	int *array = new int[10]; // array is assigned 40 bytes in the heap
+``
+
+When a dynamically allocated variable is deleted the memory is returned to the
+heap to be reassigned
+
+can be deleted with keyword delete
+
+Advantages of Heap:
+	stays until application ends or deallocated
+	big pool of memory for large storage
+
+Disadvantages of Heap:
+	comparatively slow
+	must be accessed through a pointer
+
+Stack - where all the cuntions and parameters, local variables, current position
+are located
+
+Stack is in order - can look at top item (top or peek), take off top item (pop)
+or put a new item on the top (push)
+
+```cpp
+	int foo(int x)
+	{
+		    // b
+			    return x;
+	} // foo is popped off the call stack here
+	 
+	int main()
+	{
+		// a
+		foo(5); // foo is pushed on the call stack here
+		// c
+					  
+		return 0;
+	 }
+```
+
+Advantages of Stack:
+	fast
+
+Disadvantages of Stack:
+	not much storage space
