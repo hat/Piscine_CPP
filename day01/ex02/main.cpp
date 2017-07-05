@@ -13,8 +13,11 @@ int main(void)
 {
 	ZombieEvent newZombieEvent;
 
+	newZombieEvent.setZombieType("slimer");
 	Zombie *zombieOne = newZombieEvent.newZombie("Triker");
-	zombieOne->setType("runner");
 	zombieOne->announce();
+	newZombieEvent.setZombieType("enfuego");
 	newZombieEvent.randomChump();
+	delete zombieOne;
+	return (0);
 }

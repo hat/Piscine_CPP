@@ -7,7 +7,7 @@
  * ===========================================================================*/
 
 #include <iostream>
-#include "pony.class.hpp"
+#include "Pony.class.hpp"
 
 float Pony::getHeightMeters(void)
 {
@@ -64,5 +64,7 @@ Pony::Pony(std::string name)
 
 Pony::~Pony(void)
 {
+	std::cout << "Goodbye, " << this->name << ". You will also be missed :`("
+		<< std::endl;
 	return;
 }

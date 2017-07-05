@@ -7,7 +7,7 @@
  * ===========================================================================*/
 
 #include <iostream>
-#include "pony.class.hpp"
+#include "Pony.class.hpp"
 
 void ponyOnTheHeap(std::string name)
 {
@@ -44,7 +44,5 @@ int main(void)
 {
 	ponyOnTheHeap("Dasher");
 	ponyOnTheStack("NightRider");
-	std::cout << "Goodbye, Nightrider. You will also be missed :`("
-		<< std::endl;
 	return (0);
 }

@@ -6,21 +6,20 @@
  * Author: Tony Hendrick
  * ===========================================================================*/
 
-#ifndef ZOMBIE_EVENT
-# define ZOMBIE_EVENT
+#ifndef ZOMBIE
+# define ZOMBIE
 
 # include <iostream>
-# include "Zombie.class.hpp"
 
-class ZombieEvent:public Zombie {
+class Zombie {
 	public:
-		void setZombieType(std::string type);
-		Zombie* newZombie(std::string name);
-		void randomChump(void);
-		ZombieEvent(void);
-		~ZombieEvent(void);
+		void announce(void);
+		void setType(std::string type);
+		Zombie(std::string name);
+		Zombie(void);
+		~Zombie(void);
 	private:
-		std::string zombieEventType;
+		std::string type, name;
 };
 
 #endif
