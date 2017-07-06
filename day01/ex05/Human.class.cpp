@@ -12,12 +12,12 @@
 
 std::string Human::identify(void)
 {
-	return this->newBrain.identify();
+	return (this->newBrain.identify());
 }
 
 Brain const Human::getBrain(void) const
 {
-	return this->newBrain;
+	return (this->newBrain);
 }
 
 Human::Human(void)
