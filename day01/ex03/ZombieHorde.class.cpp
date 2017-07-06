@@ -6,27 +6,29 @@
  * Author: Tony Hendrick
  * ===========================================================================*/
 
-ZombieHorde::announce()
+#include "Zombie.class.hpp"
+#include "ZombieHorde.class.hpp"
+
+void ZombieHorde::announce(void)
 {
 	for (int i = 0; i < numZombies; i++)
-		zombieHorde[i].zombie.announce();
+		horde[i].announce();
 }
 
 ZombieHorde::ZombieHorde(void)
 {
+	numZombies = 0;
 	return;
 }
 
 ZombieHorde::ZombieHorde(int n)
 {
-	zombieHorde = new Zombie[n];
+	horde = new Zombie[n];
+	numZombies = n;
 }
 
 ZombieHorde::~ZombieHorde(void)
 {
-	delete [] zombieHorde;
+	delete [] horde;
 	return;
 }
-
-Zombie* zombieHorde[];
-int numZombies = 0;

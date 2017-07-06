@@ -6,15 +6,20 @@
  * Author: Tony Hendrick
  * ===========================================================================*/
 
-#include "Zombie.class.hpp"
+#ifndef ZOMBIEHORDE_H
+# define ZOMBIEHORDE_H
 
-class ZombieHorde:public Zombie {
+# include "Zombie.class.hpp"
+
+class ZombieHorde {
 	public:
-		Zombie *horde[];
-		int numZombies;
-		announce();
+		Zombie *horde;
+		void announce(void);
 		ZombieHorde(int n);
 		~ZombieHorde(void);
 	private:
+		int numZombies;
 		ZombieHorde(void);
 };
+
+#endif
