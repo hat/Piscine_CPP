@@ -71,7 +71,8 @@ get an int with cin and check validity:
 	```
 
 
-### DAY 01 - Stack and Heap
+### DAY 01
+####Stack and Heap
 to allocate in the heap use the keyword *new
 
 ```cpp
@@ -120,3 +121,18 @@ Advantages of Stack:
 
 Disadvantages of Stack:
 	not much storage space
+
+####REFERENCES
+
+references are like a non void constant.
+
+references are declared as int& ref = num;
+
+const - keyword to make variable unmodifiable
+**same as define
+
+weapon that won't always be there.
+can't reference unless it's created.
+need a pointer.
+can't reference what may not exist.
+

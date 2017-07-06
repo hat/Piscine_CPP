@@ -6,20 +6,21 @@
  * Author: Tony Hendrick
  * ===========================================================================*/
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
-
 #include <iostream>
+#include "Weapon.class.hpp"
 
-class Weapon{
+class HumanA {
 	public:
-		const std::string &getType(void);
-		void setType(std::string newType);
-		Weapon(void);
-		Weapon(std::string);
-		~Weapon(void);
+		void attack(void);
+		void setWeapon(Weapon newWeapon);
+		void setName(std::string name);
+		Weapon getWeapon(void);
+		std::string getName(void); 
+		HumanA(void);
+		HumanA(std::string);
+		HumanA(std::string, Weapon);
+		~HumanA(void);
 	private:
-		std::string type;
+		Weapon weapon;
+		std::string name;
 };
-
-#endif
