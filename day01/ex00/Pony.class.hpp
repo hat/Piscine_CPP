@@ -6,17 +6,17 @@
  * Author: Tony Hendrick
  * ===========================================================================*/
 
-#ifndef PONY
-# define PONY
+#ifndef PONY_HPP
+# define PONY_HPP
 
 # include <iostream>
 
 class Pony {
 	public:
-		float getHeightMeters(void);
-		float getWeightKgs(void);
-		std::string getColor(void);
-		std::string getName(void);
+		float getHeightMeters(void) const;
+		float getWeightKgs(void) const;
+		std::string getColor(void) const;
+		std::string getName(void) const;
 
 		Pony(std::string name);
 		~Pony(void);

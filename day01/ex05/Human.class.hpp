@@ -6,20 +6,21 @@
  * Author: Tony Hendrick
  * ===========================================================================*/
 
-#ifndef HUMAN
-# define HUMAN
+#ifndef HUMAN_HPP
+# define HUMAN_HPP
 
-#include <iostream>
+#include <string>
+#include <sstream>
 #include "Brain.class.hpp"
 
-class Human{
+class Human {
 	public:
-		std::string identify(void);
-		Brain const getBrain(void) const;
+		std::string identify(void) const;
+		const Brain &getBrain(void);
 		Human(void);
 		~Human(void);
 	private:
-		Brain const newBrain;
+		const Brain _brain;
 };
 
 #endif

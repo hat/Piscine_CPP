@@ -6,8 +6,8 @@
  * Author: Tony Hendrick
  * ===========================================================================*/
 
-#ifndef ZOMBIEHORDE_H
-# define ZOMBIEHORDE_H
+#ifndef ZOMBIEHORDE_HPP
+# define ZOMBIEHORDE_HPP
 
 # include "Zombie.class.hpp"
 

@@ -1,10 +1,21 @@
-NAME=heapofquadrupeds
-CXX=g++
-CPPFLAGS=-Wall -Wextra -Werror
-SRCS=Pony.class.cpp main.cpp
+NAME = heapOfQuadrupeds
+SRC		=	Pony.class.cpp main.cpp
+OBJ		=	$(SRC:.cpp=.o)
+FLAGS	=	-Wall -Wextra -Werror
+CC		=	g++
 
-all:
-	$(CXX) $(CPPFLAGS) $(SRCS) -o $(NAME)
+all: $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp
+	$(CC) -o $@ -c $< $(FLAGS)
+
+clean:
+	$(RM) $(OBJ)
 
 fclean: clean
-	    rm -f $(NAME)
+	rm -rf $(NAME)
+
+re: fclean all
+
+.PHONY : re fclean clean all

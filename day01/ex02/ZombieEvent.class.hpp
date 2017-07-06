@@ -6,13 +6,13 @@
  * Author: Tony Hendrick
  * ===========================================================================*/
 
-#ifndef ZOMBIE_EVENT
-# define ZOMBIE_EVENT
+#ifndef ZOMBIE_EVENT_HPP
+# define ZOMBIE_EVENT_HPP
 
 # include <iostream>
 # include "Zombie.class.hpp"
 
-class ZombieEvent:public Zombie {
+class ZombieEvent {
 	public:
 		void setZombieType(std::string type);
 		Zombie* newZombie(std::string name);

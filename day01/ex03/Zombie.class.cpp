@@ -22,7 +22,8 @@ void Zombie::setType(std::string type)
 
 Zombie::Zombie(void)
 {
-	std::string names[] = {"Rufus","Jerome","Gordon","Neil","Lora","Glen","Eduardo","Virginia","Percy","Hilda"};
+	std::string names[] = {"Rufus","Jerome","Gordon","Neil","Lora",
+		"Glen","Eduardo","Virginia","Percy","Hilda"};
 	this->name = names[std::rand() % 10];
 	this->type = "walker";
 	return;

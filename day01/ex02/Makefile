@@ -1,10 +1,21 @@
-NAME=pluckingsomebrains
-CXX=g++
-CPPFLAGS=-Wall -Wextra -Werror
-SRCS=Zombie.class.cpp ZombieEvent.class.cpp main.cpp
+NAME = pluckingSomeBrains
+SRC		=	Zombie.class.cpp ZombieEvent.class.cpp main.cpp
+OBJ		=	$(SRC:.cpp=.o)
+FLAGS	=	-Wall -Wextra -Werror
+CC		=	g++
 
-all:
-	$(CXX) $(CPPFLAGS) $(SRCS) -o $(NAME)
+all: $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+
+%.o: %.cpp
+	$(CC) -o $@ -c $< $(FLAGS)
+
+clean:
+	$(RM) $(OBJ)
 
 fclean: clean
-	    rm -f $(NAME)
+	rm -rf $(NAME)
+
+re: fclean all
+
+.PHONY : re fclean clean all

@@ -9,22 +9,22 @@
 #include <iostream>
 #include "Pony.class.hpp"
 
-float Pony::getHeightMeters(void)
+float Pony::getHeightMeters(void) const
 {
 	return (this->heightMeters);
 }
 
-float Pony::getWeightKgs(void)
+float Pony::getWeightKgs(void) const
 {
 	return (this->weightKgs);
 }
 
-std::string Pony::getColor(void)
+std::string Pony::getColor(void) const
 {
 	return (this->color);
 }
 
-std::string Pony::getName(void)
+std::string Pony::getName(void) const
 {
 	return (this->name);
 }
@@ -64,7 +64,7 @@ Pony::Pony(std::string name)
 
 Pony::~Pony(void)
 {
-	std::cout << "Goodbye, " << this->name << ". You will also be missed :`("
+	std::cout << "Goodbye, " << this->name << ", you will be missed :`("
 		<< std::endl;
 	return;
 }

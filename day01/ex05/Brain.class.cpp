@@ -6,8 +6,6 @@
  * Author: Tony Hendrick
  * ===========================================================================*/
 
-#include <iostream>
-#include <sstream>
 #include "Brain.class.hpp"
 
 std::string Brain::identify(void) const
@@ -19,12 +17,7 @@ std::string Brain::identify(void) const
 
 Brain::Brain(void)
 {
-	this->numLobes = 0;
-}
-
-Brain::Brain(int numLobes)
-{
-	this->numLobes = numLobes;
+	return;
 }
 
 Brain::~Brain(void)

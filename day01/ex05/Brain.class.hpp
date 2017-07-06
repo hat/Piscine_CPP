@@ -6,19 +6,18 @@
  * Author: Tony Hendrick
  * ===========================================================================*/
 
-#ifndef BRAIN
-# define BRAIN
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-#include <iostream>
+#include <string>
+#include <sstream>
 
-class Brain{
+class Brain {
 	public:
 		std::string identify(void) const;
 		Brain(void);
-		Brain(int numLobes);
 		~Brain(void);
 	private:
-		int numLobes;
 };
 
 #endif

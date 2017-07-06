@@ -6,13 +6,21 @@
  * Author: Tony Hendrick
  * ===========================================================================*/
 
+#include <iostream>
 #include "ZombieHorde.class.hpp"
-//#include "Zombie.class.cpp"
 
-int main(void)
+int main(int argc, char *argv[])
 {
-	ZombieHorde newZombieHorde = ZombieHorde(10);
+	char * pEnd;
+	long int hordeSize;
 
-	newZombieHorde.announce();
+	if (argc == 2)
+	{
+		hordeSize = strtol(argv[1], &pEnd, 10);
+		ZombieHorde newZombieHorde = ZombieHorde(hordeSize);
+		newZombieHorde.announce();
+	}
+	else
+		std::cout << "USAGE: " << argv[0] << " [int]" << std::endl;
 	return (0);
 }
