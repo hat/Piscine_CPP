@@ -13,6 +13,7 @@ int main(void)
 {
 	ZombieEvent newZombieEvent;
 
+	srand(time(NULL));
 	newZombieEvent.setZombieType("slimer");
 	Zombie *zombieOne = newZombieEvent.newZombie("Triker");
 	zombieOne->announce();

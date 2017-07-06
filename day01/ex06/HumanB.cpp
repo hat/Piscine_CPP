@@ -6,51 +6,27 @@
  * Author: Tony Hendrick
  * ===========================================================================*/
 
-#include "Weapon.class.hpp"
 #include "HumanB.hpp"
 
 void HumanB::attack(void)
 {
-	std::cout << this->name << " attacks with his "
-		<< this->weapon.getType() << std::endl;
+	std::cout << this->_name << " attacks with his "
+		<< this->_weapon->getType() << std::endl;
 }
 
-void HumanB::setWeapon(Weapon newWeapon)
+void HumanB::setWeapon(Weapon &weapon)
 {
-	this->weapon = newWeapon;
+	this->_weapon = &weapon;
 }
 
-void HumanB::setName(std::string name)
+HumanB::HumanB(std::string name) : _name(name)
 {
-	this->name = name;
-}
-
-Weapon HumanB::getWeapon(void)
-{
-	return (this->weapon);
-}
-
-std::string HumanB::getName(void)
-{
-	return (this->name);
+	this->_name = name;
+	return;
 }
 
 HumanB::HumanB(void)
 {
-	this->name = "Bob";
-	return;
-}
-
-HumanB::HumanB(std::string name)
-{
-	this->name = name;
-	return;
-}
-
-HumanB::HumanB(std::string name, Weapon weapon)
-{
-	this->name = name;
-	this->weapon = weapon;
 	return;
 }
 

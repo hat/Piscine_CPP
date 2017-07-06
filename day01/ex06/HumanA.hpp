@@ -6,21 +6,20 @@
  * Author: Tony Hendrick
  * ===========================================================================*/
 
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
+
 #include <iostream>
 #include "Weapon.class.hpp"
 
 class HumanA {
 	public:
 		void attack(void);
-		void setWeapon(Weapon newWeapon);
-		void setName(std::string name);
-		Weapon getWeapon(void);
-		std::string getName(void); 
-		HumanA(void);
-		HumanA(std::string);
-		HumanA(std::string, Weapon);
+		HumanA(std::string name, Weapon &weapon);
 		~HumanA(void);
 	private:
-		Weapon weapon;
-		std::string name;
+		std::string _name;
+		Weapon &_weapon;
 };
+
+#endif

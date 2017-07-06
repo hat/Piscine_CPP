@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 	char * pEnd;
 	long int hordeSize;
 
+	srand(time(NULL));
 	if (argc == 2)
 	{
 		hordeSize = strtol(argv[1], &pEnd, 10);

@@ -11,7 +11,7 @@
 
 #include <iostream>
 
-class Weapon{
+class Weapon {
 	public:
 		const std::string &getType(void);
 		void setType(std::string newType);

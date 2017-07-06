@@ -136,3 +136,40 @@ can't reference unless it's created.
 need a pointer.
 can't reference what may not exist.
 
+####FILESTREAMS
+
+```cpp
+	#include <iostream>
+	#include <fstream>
+	
+	int main()
+	{
+		std::ifsream ifs("numbers"); //reading from file numbers
+		std::ifstream ifsTwo;
+		
+		unsigned int num1;
+		unsigned int num2;
+		
+		ifTwo.open("test"); //reading from file test
+		ifs >> num1 >> num2; //reading ints from files to vars
+		ifs.close(); //close file
+		ifsTwo.close(); //close file
+		
+		std::ofstream ofs("test.out"); // Output file
+		
+		ofs << "I am writing to test.out" << std::endl;
+		ofs.close(); 
+	}
+```
+
+####Function Pointers
+```cpp
+	void (Human::*arrPtrF[3])(std::string const & target) = {&Human::meleeAttack, &Human::rangedAttack, &Human::intimidatingShout};
+
+	if (action_name == "melee")
+		(this->*arrPtrF[0])(target);
+	else if (action_name == "ranged")
+		(this->*arrPtrF[1])(target);
+	else if (action_name == "shout")
+		(this->*arrPtrF[2])(target);
+```
