@@ -18,6 +18,13 @@ class FragTrap() {
 		void  meleeAttack(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+
+		FragTrap(FragTrap const & src); //canonical
+
+		Fixed & operator=(Fixed const & rhs); //canonical
+
+		FragTrap(void); //Canonical
+		~FragTrap(void); //Canonical
 	private:
 		int _hitPoints;
 		int _maxHitPoints;
