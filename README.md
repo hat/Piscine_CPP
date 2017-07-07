@@ -173,3 +173,14 @@ can't reference what may not exist.
 	else if (action_name == "shout")
 		(this->*arrPtrF[2])(target);
 ```
+
+### DAY02
+
+####AD HOC POLYMORPHISM (FUNCTION OVERLOADING)
+
+Operator Overload:
+
+```1.+ 1``` - same as doing 1 + 1 as the + is a class
+
+Canonical Form:
+Class has a default constructor, copy constructor, possible operator overload

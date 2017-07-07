@@ -42,13 +42,13 @@ std::string Logger::makeLogEntry(std::string message)
 
 void Logger::log(std::string const & dest, std::string const & message)
 {
-	void (Logger::*arrPtrF[2])(std::string const message) = {&Logger::logToConsole,
+	void (Logger::*LoggerFn[2])(std::string const message) = {&Logger::logToConsole,
 		&Logger::logToFile};
 
 	if (dest == "console")
-		(this->*arrPtrF[0])(message);
+		(this->*LoggerFn[0])(message);
 	else if (dest == "file")
-		(this->*arrPtrF[1])(message);
+		(this->*LoggerFn[1])(message);
 }
 
 Logger::Logger(void)

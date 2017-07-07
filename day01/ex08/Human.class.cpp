@@ -25,13 +25,13 @@ void Human::intimidatingShout(std::string const & target)
 
 void Human::action(std::string const & action_name, std::string const & target)
 {
-	void (Human::*arrPtrF[3])(std::string const & target) = {&Human::meleeAttack,
+	void (Human::*HumanFn[3])(std::string const & target) = {&Human::meleeAttack,
 		&Human::rangedAttack, &Human::intimidatingShout};
 
 	if (action_name == "melee")
-		(this->*arrPtrF[0])(target);
+		(this->*HumanFn[0])(target);
 	else if (action_name == "ranged")
-		(this->*arrPtrF[1])(target);
+		(this->*HumanFn[1])(target);
 	else if (action_name == "shout")
-		(this->*arrPtrF[2])(target);
+		(this->*HumanFn[2])(target);
 }
