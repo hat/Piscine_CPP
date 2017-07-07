@@ -16,7 +16,7 @@ int FragTrap::rangedAttack(std::string const & target)
 {
 	this->_hitPoints -= this->_rangedAttackDamage;
 	std::cout << "FR4G-TP " << this->_name << " attacks " << target
-		<< " at range, causing " << 6 << " points of damage!"
+		<< " at range, causing " << this->_rangedAttackDamage << " points of damage!"
 		<< std::endl;
 	return (this->_rangedAttackDamage);
 }
@@ -25,7 +25,7 @@ int  FragTrap::meleeAttack(std::string const & target)
 {
 	this->_hitPoints -= this->_meleeAttackDamage;
 	std::cout << "FR4G-TP " << this->_name << " melee attacks " << target
-		<< ", causing " << 8 << " points of damage!"
+		<< ", causing " << this->_meleeAttackDamage << " points of damage!"
 		<< std::endl;
 	return (this->_meleeAttackDamage);
 }

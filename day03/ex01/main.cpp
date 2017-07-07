@@ -10,25 +10,22 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
-#include "FragTrap.class.hpp"
+#include "ScavTrap.class.hpp"
 
 int main()
 {
-	FragTrap bob("Bob");
-	FragTrap freddy("Freddy");
-	FragTrap grewa = freddy;
+	ScavTrap bob("Bob");
+	ScavTrap freddy("Freddy");
+	ScavTrap grewa = freddy;
 
 	bob.rangedAttack("Freddy");
 	bob.meleeAttack("Freddy");
-	bob.sneakAttack("Freddy");
-	bob.grenadeAttack("Freddy");
-	bob.berserkAttack("Freddy");
 
 	bob.takeDamage(40);
 	bob.beRepaired(35);
 	bob.beEnergized(10);
 
-	bob.vaulthunter_dot_exe("Freddy");
+	//challenge here
 
 	return (0);
 }
