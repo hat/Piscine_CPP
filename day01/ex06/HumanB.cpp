@@ -21,7 +21,6 @@ void HumanB::setWeapon(Weapon &weapon)
 
 HumanB::HumanB(std::string name) : _name(name)
 {
-	this->_name = name;
 	return;
 }
 

@@ -11,20 +11,20 @@
 
 void ZombieHorde::announce(void)
 {
-	for (int i = 0; i < numZombies; i++)
+	for (int i = 0; i < _numZombies; i++)
 		horde[i].announce();
 }
 
 ZombieHorde::ZombieHorde(void)
 {
-	numZombies = 0;
+	_numZombies = 0;
 	return;
 }
 
 ZombieHorde::ZombieHorde(int n)
 {
 	horde = new Zombie[n];
-	numZombies = n;
+	_numZombies = n;
 }
 
 ZombieHorde::~ZombieHorde(void)

@@ -10,7 +10,6 @@
 # define HUMAN_HPP
 
 #include <string>
-#include <sstream>
 #include "Brain.class.hpp"
 
 class Human {

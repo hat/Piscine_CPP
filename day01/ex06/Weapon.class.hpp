@@ -9,6 +9,7 @@
 #ifndef WEAPON_HPP
 # define WEAPON_HPP
 
+#include <string>
 #include <iostream>
 
 class Weapon {
@@ -19,7 +20,7 @@ class Weapon {
 		Weapon(std::string);
 		~Weapon(void);
 	private:
-		std::string type;
+		std::string _type;
 };
 
 #endif

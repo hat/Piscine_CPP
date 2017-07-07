@@ -7,64 +7,64 @@
  * ===========================================================================*/
 
 #include <iostream>
+#include <string>
 #include "Pony.class.hpp"
 
 float Pony::getHeightMeters(void) const
 {
-	return (this->heightMeters);
+	return (this->_heightMeters);
 }
 
 float Pony::getWeightKgs(void) const
 {
-	return (this->weightKgs);
+	return (this->_weightKgs);
 }
 
 std::string Pony::getColor(void) const
 {
-	return (this->color);
+	return (this->_color);
 }
 
 std::string Pony::getName(void) const
 {
-	return (this->name);
+	return (this->_name);
 }
 
 void Pony::setHeightMeters(float height)
 {
-	this->heightMeters = height;
+	this->_heightMeters = height;
 }
 
 void Pony::setWeightKgs(float weight)
 {
-	this->weightKgs = weight;
+	this->_weightKgs = weight;
 }
 
 void Pony::setColor(std::string color)
 {
-	this->color = color;
+	this->_color = color;
 }
 
 Pony::Pony(void)
 {
-	this->name = "unknown";
-	this->heightMeters = 0;
-	this->weightKgs = 0;
-	this->color = "natural";
-	this->isUnicorn = false;
+	this->_name = "unknown";
+	this->_heightMeters = 0;
+	this->_weightKgs = 0;
+	this->_color = "natural";
+	this->_isUnicorn = false;
 }
 
-Pony::Pony(std::string name)
+Pony::Pony(std::string name) : _name(name)
 {
-	this->name = name;
-	this->heightMeters = 0;
-	this->weightKgs = 0;
-	this->color = "natural";
-	this->isUnicorn = false;
+	this->_heightMeters = 0;
+	this->_weightKgs = 0;
+	this->_color = "natural";
+	this->_isUnicorn = false;
 }
 
 Pony::~Pony(void)
 {
-	std::cout << "Goodbye, " << this->name << ", you will be missed :`("
+	std::cout << "Goodbye, " << this->_name << ", you will be missed :`("
 		<< std::endl;
 	return;
 }

@@ -10,6 +10,7 @@
 # define PONY_HPP
 
 # include <iostream>
+# include <string>
 
 class Pony {
 	public:
@@ -26,9 +27,9 @@ class Pony {
 		void setColor(std::string color);
 
 	private:
-		float heightMeters, weightKgs;
-		std::string color, name;
-		bool isUnicorn;
+		float _heightMeters, _weightKgs;
+		std::string _color, _name;
+		bool _isUnicorn;
 
 		Pony(void);
 };

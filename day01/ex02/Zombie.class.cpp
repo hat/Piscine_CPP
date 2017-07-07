@@ -7,29 +7,29 @@
  * ===========================================================================*/
 
 #include <iostream>
+#include <string>
 #include "Zombie.class.hpp"
 
 void Zombie::announce(void)
 {
-	std::cout << "<" << this->name << " (" << this->type << ")>" <<  
+	std::cout << "<" << this->_name << " (" << this->_type << ")>" <<  
 		" Braiiiiiiinnnssss..." << std::endl;
 }
 
-void Zombie::setType(std::string type)
+void Zombie::setType(std::string type) : _type(type)
 {
-	this->type = type;
+	return;
 }
 
 Zombie::Zombie()
 {
-	this->name = "GenericZombie";
-	this->type = "crawler";
+	this->_name = "GenericZombie";
+	this->_type = "crawler";
 }
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(std::string name) : _name(name)
 {
-	this->name = name;
-	this->type = "walker";
+	this->_type = "walker";
 }
 
 Zombie::~Zombie(void)

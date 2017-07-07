@@ -6,6 +6,8 @@
  * Author: Tony Hendrick
  * ===========================================================================*/
 
+#include <string>
+#include <iostream>
 #include "Human.class.hpp"
 
 void Human::meleeAttack(std::string const & target)

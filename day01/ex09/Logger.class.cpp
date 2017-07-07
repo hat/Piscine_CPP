@@ -6,6 +6,8 @@
  * Author: Tony Hendrick
  * ==========================================================================*/
 
+#include <iostream>
+#include <string>
 #include "Logger.class.hpp"
 
 static std::string displayTimestamp(void)

@@ -7,6 +7,7 @@
  * ==========================================================================*/
 
 #include <iostream>
+#include <string>
 #include "Fixed.class.hpp"
 
 Fixed::Fixed(void) : _value(0)

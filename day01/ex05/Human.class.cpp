@@ -6,18 +6,17 @@
  * Author: Tony Hendrick
  * ===========================================================================*/
 
+#include <string>
 #include "Human.class.hpp"
 
 std::string Human::identify(void) const
 {
-	std::stringstream address;
-	address << &(this->_brain);
-	return (address.str());
+	return (this->_brain.identify());
 }
 
 const Brain &Human::getBrain(void)
 {
-	return this->_brain;
+	return (this->_brain);
 }
 
 Human::Human(void)

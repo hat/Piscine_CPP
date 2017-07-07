@@ -6,16 +6,17 @@
  * Author: Tony Hendrick
  * ===========================================================================*/
 
+#include <string>
 #include "Weapon.class.hpp"
 
 const std::string &Weapon::getType(void)
 {
-	return (this->type);
+	return (this->_type);
 }
 
 void Weapon::setType(std::string newType)
 {
-	this->type = newType;
+	this->_type = newType;
 }
 
 Weapon::Weapon(void)
@@ -23,9 +24,8 @@ Weapon::Weapon(void)
 	return;
 }
 
-Weapon::Weapon(std::string type)
+Weapon::Weapon(std::string type) : _type(type)
 {
-	this->type = type;
 	return;
 }
 

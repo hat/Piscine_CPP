@@ -10,6 +10,7 @@
 # define ZOMBIE_EVENT_HPP
 
 # include <iostream>
+# include <string>
 # include "Zombie.class.hpp"
 
 class ZombieEvent {
@@ -20,7 +21,7 @@ class ZombieEvent {
 		ZombieEvent(void);
 		~ZombieEvent(void);
 	private:
-		std::string zombieEventType;
+		std::string _zombieEventType;
 };
 
 #endif

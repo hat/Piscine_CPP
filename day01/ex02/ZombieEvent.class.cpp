@@ -7,18 +7,19 @@
  * ===========================================================================*/
 
 #include <iostream>
+#include <string>
 #include "ZombieEvent.class.hpp"
 #include "Zombie.class.hpp"
 
 void ZombieEvent::setZombieType(std::string type)
 {
-	zombieEventType = type;
+	_zombieEventType = type;
 }
 
 Zombie* ZombieEvent::newZombie(std::string name)
 {
 	Zombie *newZombie = new Zombie(name);
-	newZombie->setType(zombieEventType);
+	newZombie->setType(_zombieEventType);
 	return newZombie;
 }
 
@@ -27,7 +28,7 @@ void ZombieEvent::randomChump(void)
 	std::string names[] = {"Rufus","Jerome","Gordon","Neil","Lora",
 		"Glen","Eduardo","Virginia","Percy","Hilda"};
 	Zombie *newZombie = new Zombie(names[std::rand() % 10]);
-	newZombie->setType(zombieEventType);
+	newZombie->setType(_zombieEventType);
 	newZombie->announce();
 	delete newZombie;
 }
@@ -42,4 +43,4 @@ ZombieEvent::~ZombieEvent(void)
 	return;
 }
 
-std::string zombieEventType = "runner";
+std::string _zombieEventType = "runner";

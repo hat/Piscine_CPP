@@ -18,7 +18,7 @@ class ZombieHorde {
 		ZombieHorde(int n);
 		~ZombieHorde(void);
 	private:
-		int numZombies;
+		int _numZombies;
 		ZombieHorde(void);
 };
 

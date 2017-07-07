@@ -6,6 +6,7 @@
  * Author: Tony Hendrick
  * ===========================================================================*/
 
+#include <string>
 #include "Brain.class.hpp"
 
 std::string Brain::identify(void) const

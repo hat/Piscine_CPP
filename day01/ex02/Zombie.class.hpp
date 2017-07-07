@@ -10,6 +10,7 @@
 # define ZOMBIE
 
 # include <iostream>
+# include <string>
 
 class Zombie {
 	public:
@@ -19,7 +20,7 @@ class Zombie {
 		Zombie(void);
 		~Zombie(void);
 	private:
-		std::string type, name;
+		std::string _type, _name;
 };
 
 #endif
