@@ -1,5 +1,5 @@
 /*=============================================================================
- * Project: Aaaaaaand ... OPEN!
+ * Project: Serena, my love!
  *
  * Program: Creates a FR4G-TP assault robot class for game
  *
