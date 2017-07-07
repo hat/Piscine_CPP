@@ -7,22 +7,22 @@
  * ===========================================================================*/
 
 #ifndef LOGGER_HPP
-#define LOGGER_HPP
+# define LOGGER_HPP
 
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <ctime>
 
 class Logger {
 	public:
 		void log(std::string const & dest, std::string const & message);
-		Logger(std::string file);
 		Logger(void);
 	private:
-		void logToConsole(std::string log);
-		void logToFile(std::string log);
-		void makeLongEntry(std::string message);
-		std::string _file;
+		void logToConsole(std::string message);
+		void logToFile(std::string message);
+		std::string makeLogEntry(std::string message);
+		static std::string _file;
 };
 
 #endif
