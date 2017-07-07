@@ -14,18 +14,18 @@
 
 int main()
 {
-	ScavTrap bob("Bob");
-	ScavTrap freddy("Freddy");
-	ScavTrap grewa = freddy;
+	ScavTrap humi("humi");
+	ScavTrap Gina("Gina");
+	ScavTrap Pire = Gina;
 
-	bob.rangedAttack("Freddy");
-	bob.meleeAttack("Freddy");
+	humi.rangedAttack("Gina");
+	humi.meleeAttack("Gina");
 
-	bob.takeDamage(40);
-	bob.beRepaired(35);
-	bob.beEnergized(10);
+	humi.takeDamage(40);
+	humi.beRepaired(35);
+	humi.beEnergized(10);
 
-	//challenge here
+	humi.challengeNewcomer("Gina");
 
 	return (0);
 }

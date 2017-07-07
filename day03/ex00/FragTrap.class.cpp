@@ -104,7 +104,6 @@ int FragTrap::vaulthunter_dot_exe(std::string const & target)
 	else
 		std::cout << this->_name << " does not have enough energy!" << std::endl;
 	return (0);
-
 }
 
 FragTrap & FragTrap::operator=(FragTrap const & rhs)

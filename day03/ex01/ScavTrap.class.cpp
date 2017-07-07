@@ -94,7 +94,22 @@ void ScavTrap::levelUp(void)
 	this->_level += 1;
 }
 
-//challenge here
+int ScavTrap::challengeNewcomer(std::string const & target)
+{
+	int (ScavTrap::*ScavChallengeFn[3])(std::string const & target) =
+		{ &ScavTrap::paperRockScissorsChallenge, &ScavTrap::chubbyBunnyChallenge,
+			&ScavTrap::breakDanceChallenge};
+
+	if (this->_energyPoints >= 15)
+	{
+		int rand = std::rand() % 3;
+		this->_energyPoints -= 15;
+		return ((this->*ScavChallengeFn[rand])(target));
+	}
+	else
+		std::cout << this->_name << " is low on energy!" << std::endl;
+	return (0);
+}
 
 ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
 {
