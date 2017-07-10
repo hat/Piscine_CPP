@@ -184,3 +184,68 @@ Operator Overload:
 
 Canonical Form:
 Class has a default constructor, copy constructor, possible operator overload
+
+### DAY05
+
+#### Embracated class - class inside class
+
+```
+class Cat {
+	class Leg {
+	};
+};
+
+int main()
+{
+Cat::Leg newLeg;
+}
+```
+
+#### Excepetions
+
+Messy way
+
+```cpp
+	void test()
+	{
+		try
+		{
+			if (// ERROR)
+			{
+				throw std::exception();
+			}
+			else
+			{
+				//Do action
+			}
+		}
+		catch (std::excpetion e)
+		{
+			//Handle error 
+			e.what(); // Message that describes what happened
+		}
+	}
+```
+
+Clean Way
+```cpp
+	void test2()
+	{
+		if (//there's an error)
+			throw std::exception();
+		else
+			//do stuff
+	}
+	
+	void test3()
+	{
+		try
+			test2();
+		catch (std::exception& e)
+			//handle error
+	}
+```
+
+If function returns error often, such as isAlive, do not use an excpetion just a return value.
+
+Else if it should not fail at all 
