@@ -34,13 +34,24 @@ int Bureaucrat::getGrade(void) const
 	return this->_grade;
 }
 
-void signForm(Form form)
+void Bureaucrat::signForm(Form & form)
 {
-	if (form.maxGradeSign >= this->_grade)
-		std::cout << this->_name << " signs " << form._name;
-	else
-		std::cout << this->_name << " cannot sign " << form._name
-			<< " due to not being the right grade.";
+
+	try
+	{
+		form.beSigned(*this);
+		std::cout << "<" << _name << "> signs <" << form.getName() << ">" << std::endl;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << "<" << _name << "> cannot sign <" << form.getName() << "> because <"
+				<< e.what() << ">" << std::endl;
+	}
+	// if (f.getMaxGradeSign() >= this->_grade)
+	// 	std::cout << this->_name << " signs " << f.getName();
+	// else
+	// 	std::cout << this->_name << " cannot sign " << f.getName()
+	// 		<< " due to not being the right grade.";
 }
 
 Bureaucrat::Bureaucrat(std::string name): _name(name)

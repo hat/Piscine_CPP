@@ -6,21 +6,27 @@
  * Author: Tony Hendrick
  * ==========================================================================*/
 
-#include "Form.class.hpp"
+#ifndef FORM_HPP
+# define FORM_HPP
+
+#include <iostream>
+#include <string>
+
+class Bureaucrat;
 
 class Form {
-private:
-	std::string getName(void);
-	bool getIsSigned(void);
-	int getMaxGradeSign(void);
-	int getMaxGradeExecute(void);
+public:
+	std::string getName(void) const;
+	bool getIsSigned(void) const;
+	int getMaxGradeSign(void) const;
+	int getMaxGradeExecute(void) const;
 
-	std::string setName(std::string name);
-	bool setIsSigned(bool sign);
-	int setMaxGradeSign(int maxGrade);
-	int setMaxGradeExecute(int maxGrade);
+	void setName(std::string name);
+	void setIsSigned(bool sign);
+	void setMaxGradeSign(int maxGrade);
+	void setMaxGradeExecute(int maxGrade);
 
-	void beSigned(Bureaucrat bc);
+	void beSigned(Bureaucrat & bc);
 	void _initValues(void);
 
 	Form & operator=(Form const & rhs);
@@ -35,3 +41,5 @@ private:
 };
 
 std::ostream & operator<<(std::ostream & o, Form const & i);
+
+#endif

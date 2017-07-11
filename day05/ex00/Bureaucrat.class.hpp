@@ -6,6 +6,9 @@
  * Author: Tony Hendrick
  * ==========================================================================*/
 
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
+
 #include <iostream>
 #include <string>
 
@@ -49,3 +52,5 @@ private:
 };
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat const & i);
+
+#endif

@@ -6,9 +6,13 @@
  * Author: Tony Hendrick
  * ==========================================================================*/
 
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
+
 #include <iostream>
 #include <string>
-#include "Form.class.hpp"
+
+class Form;
 
 class Bureaucrat {
 
@@ -16,7 +20,7 @@ public:
 	void incrementGrade(int grade);
 	void decrementGrade(int grade);
 	void _initValue(void);
-	void signForm(Form form);
+	void signForm(Form & form);
 
 	std::string getName(void) const;
 	int getGrade(void) const;
@@ -51,3 +55,5 @@ private:
 };
 
 std::ostream & operator<<(std::ostream & o, Bureaucrat const & i);
+
+#endif

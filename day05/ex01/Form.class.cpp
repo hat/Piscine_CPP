@@ -7,68 +7,69 @@
  * ==========================================================================*/
 
 #include "Form.class.hpp"
+#include "Bureaucrat.class.hpp"
 
-std::string Form::getName(void)
+std::string Form::getName(void) const
 {
 	return (this->_name);
 }
 
-bool Form::getIsSigned(void)
+bool Form::getIsSigned(void) const
 {
 	return (this->_signed);
 }
 
-int Form::getMaxGradeSign(void)
+int Form::getMaxGradeSign(void) const
 {
 	return (this->_maxGradeSign);
 }
 
-int Form::getMaxGradeExecute(void)
+int Form::getMaxGradeExecute(void) const
 {
 	return (this->_maxGradeExecute);
 }
 
-std::string setName(void)
+void Form::setName(std::string name)
 {
-	return (this->_name);
+	this->_name = name;
 }
 
-bool Form::setIsSigned(bool sign)
+void Form::setIsSigned(bool sign)
 {
 	this->_signed = sign;
 }
 
-int Form::setMaxGradeSign(int maxGrade)
+void Form::setMaxGradeSign(int maxGrade)
 {
-	if (this->maxGrade + maxGrade > 150)
-		return (Form::GradeTooLowException)
-	else if (this->maxGrade - maxGrade < 1)
-		return (Form::GradeTooHighException)
+	if (this->_maxGradeSign + maxGrade > 150)
+		throw (Bureaucrat::GradeTooLowException());
+	else if (this->_maxGradeSign - maxGrade < 1)
+		throw (Bureaucrat::GradeTooHighException());
 	else
 		this->_maxGradeSign  = maxGrade;
 }
 
-int Form::setMaxGradeExecute(int maxGrade)
+void Form::setMaxGradeExecute(int maxGrade)
 {
-	if (this->maxGrade + maxGrade > 150)
-		return (Form::GradeTooLowException);
-	else if (this->maxGrade - maxGrade < 1)
-		return (Form::GradeTooHighException);
+	if (this->_maxGradeExecute + maxGrade > 150)
+		throw (Bureaucrat::GradeTooLowException());
+	else if (this->_maxGradeExecute - maxGrade < 1)
+		throw (Bureaucrat::GradeTooHighException());
 	else
 		this->_maxGradeExecute = maxGrade;
 }
 
-void Form::beSigned(Bureaucrat bc)
+void Form::beSigned(Bureaucrat & bc)
 {
-	if (bc->getGrade <= this->_maxGradeSign)
+	if (bc.getGrade() <= this->_maxGradeSign)
 		this->setIsSigned(true);
 	else
-		return (Form::GradeTooLowException);
+		throw (Bureaucrat::GradeTooLowException());
 }
 
 void Form::_initValues(void)
 {
-	this->_name = "Form"
+	this->_name = "Form";
 	this->_signed = false;
 	this->_maxGradeSign = 1;
 	this->_maxGradeExecute = 1;
@@ -77,9 +78,10 @@ void Form::_initValues(void)
 Form & Form::operator=(Form const & rhs)
 {
 	this->_name = rhs._name;
-	this->_signed - rhs._signed;
+	this->_signed = rhs._signed;
 	this->_maxGradeSign = rhs._maxGradeSign;
 	this->_maxGradeExecute = rhs._maxGradeExecute;
+	return (*this);
 }
 
 Form::Form(void)
