@@ -18,7 +18,7 @@ class ShrubberyCreationForm : public Form
 {
 public:
 	ShrubberyCreationForm(void);
-	ShrubberyCreationForm(std::string);
+	ShrubberyCreationForm(std::string target);
 	ShrubberyCreationForm(ShrubberyCreationForm const & src);
 	~ShrubberyCreationForm(void);
 

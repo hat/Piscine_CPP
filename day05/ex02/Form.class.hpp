@@ -29,6 +29,8 @@ public:
 	void beSigned(Bureaucrat & bc);
 	void _initValues(void);
 
+	virtual void execute(Bureaucrat const & executor) const = 0;
+
 	Form & operator=(Form const & rhs);
 	Form(void);
 	Form(Form const & src);

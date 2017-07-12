@@ -28,5 +28,31 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	ofile.close();
 }
 
+ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm const & rhs)
+{
+	return (*this);
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(void): Form("General", "Shrubbery", ShrubberyCreationForm::_sign, ShrubberyCreationForm::_exec)
+{
+	return;
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): Form(target, "Shrubbery", ShrubberyCreationForm::_sign, ShrubberyCreationForm::_exec)
+{
+	return;
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src): Form("Anonymous", "Shrubbery", ShrubberyCreationForm::_sign, ShrubberyCreationForm::_exec)
+{
+	*this = src;
+	return;
+}
+
+ShrubberyCreationForm::~ShrubberyCreationForm(void)
+{
+	return;
+}
+
 const int ShrubberyCreationForm::_sign = 145;
 const int ShrubberyCreationForm::_execute = 137;
