@@ -36,22 +36,11 @@ int Bureaucrat::getGrade(void) const
 
 void Bureaucrat::signForm(Form & form)
 {
-
-	try
-	{
-		form.beSigned(*this);
-		std::cout << "<" << _name << "> signs <" << form.getName() << ">" << std::endl;
-	}
-	catch (std::exception & e)
-	{
-		std::cout << "<" << _name << "> cannot sign <" << form.getName() << "> because <"
-				<< e.what() << ">" << std::endl;
-	}
-	// if (f.getMaxGradeSign() >= this->_grade)
-	// 	std::cout << this->_name << " signs " << f.getName();
-	// else
-	// 	std::cout << this->_name << " cannot sign " << f.getName()
-	// 		<< " due to not being the right grade.";
+	if (form.getMaxGradeSign() >= this->_grade)
+	    std::cout << this->_name << " signs " << form.getName();
+	else
+	  std::cout << this->_name << " cannot sign " << form.getName()
+	        << " due to not being the right grade.";
 }
 
 Bureaucrat::Bureaucrat(std::string name): _name(name)

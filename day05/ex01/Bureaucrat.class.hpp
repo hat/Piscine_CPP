@@ -12,7 +12,7 @@
 #include <iostream>
 #include <string>
 
-class Form;
+#include "Form.class.hpp"
 
 class Bureaucrat {
 

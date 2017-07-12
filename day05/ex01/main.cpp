@@ -9,7 +9,7 @@
 #include <iostream>
 #include <string>
 #include "Bureaucrat.class.hpp"
-#include "Form.class.cpp"
+#include "Form.class.hpp"
 
 int main()
 {
@@ -78,8 +78,15 @@ int main()
 	Form law;
 	Bureaucrat crat("Bob", 145);
 	
-	std::cout << law << std::endl;
-	law.beSigned(crat);
-	std::cout << law << std::endl;
+	try
+	{
+		std::cout << law << std::endl;
+		law.beSigned(crat);
+		std::cout << law << std::endl;
+	}
+	catch (Bureaucrat::GradeTooLowException e)
+	{
+		std::cout << "He can't sign that!" << std::endl;
+	}
 	return (0);
 }
