@@ -9,6 +9,11 @@
 #include "Form.class.hpp"
 #include "Bureaucrat.class.hpp"
 
+std::string Form::getTarget(void) const
+{
+	return (this->_target);
+}
+
 std::string Form::getName(void) const
 {
 	return (this->_name);
@@ -27,6 +32,11 @@ int Form::getMaxGradeSign(void) const
 int Form::getMaxGradeExecute(void) const
 {
 	return (this->_maxGradeExecute);
+}
+
+void Form::setTarget(std::string target)
+{
+	this->_name = target;
 }
 
 void Form::setName(std::string name)

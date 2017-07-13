@@ -10,6 +10,9 @@
 #include <string>
 #include "Bureaucrat.class.hpp"
 #include "Form.class.hpp"
+#include "PresidentialPardonForm.class.hpp"
+#include "RobotomyRequestForm.class.hpp"
+#include "ShrubberyCreationForm.class.hpp"
 
 int main()
 {
@@ -87,6 +90,16 @@ int main()
 	catch (Bureaucrat::GradeTooLowException e)
 	{
 		std::cout << "He can't sign that!" << std::endl;
+	}
+
+	try
+	{
+		ShrubberyCreationForm scf;
+		scf.execute();
+	}
+	catch (std::exception e)
+	{
+		std::cout << e.what();
 	}
 	return (0);
 }

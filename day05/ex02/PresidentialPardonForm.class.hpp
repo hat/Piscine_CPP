@@ -28,6 +28,6 @@ public:
 private:
 	static const int _sign;
 	static const int _execute;
-}
+};
 
 #endif

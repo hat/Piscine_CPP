@@ -21,6 +21,7 @@ public:
 	void decrementGrade(int grade);
 	void _initValue(void);
 	void signForm(Form & form);
+	void executeForm(Form const & form);
 
 	std::string getName(void) const;
 	int getGrade(void) const;

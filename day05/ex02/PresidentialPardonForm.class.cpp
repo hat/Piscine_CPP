@@ -12,25 +12,26 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	Form::execute(executor);
 
-	std::cout << this->_target << "has been pardoned by Zafod Beeblebrox.";
+	std::cout << this->getName() << "has been pardoned by Zafod Beeblebrox.";
 }
 
 PresidentialPardonForm & PresidentialPardonForm::operator=(PresidentialPardonForm const & rhs)
 {
+	(void)rhs;
 	return (*this);
 }
 
-PresidentialPardonForm::PresidentialPardonForm(void): Form("General", "Shrubbery", PresidentialPardonForm::_sign, PresidentialPardonForm::_exec)
+PresidentialPardonForm::PresidentialPardonForm(void): Form("General", "Shrubbery", PresidentialPardonForm::_sign, PresidentialPardonForm::_execute)
 {
 	return;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target): Form(target, "Shrubbery", PresidentialPardonForm::_sign, PresidentialPardonForm::_exec)
+PresidentialPardonForm::PresidentialPardonForm(std::string target): Form(target, "Shrubbery", PresidentialPardonForm::_sign, PresidentialPardonForm::_execute)
 {
 	return;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & src): Form("Anonymous", "Shrubbery", PresidentialPardonForm::_sign, PresidentialPardonForm::_exec)
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & src): Form("Anonymous", "Shrubbery", PresidentialPardonForm::_sign, PresidentialPardonForm::_execute)
 {
 	*this = src;
 	return;

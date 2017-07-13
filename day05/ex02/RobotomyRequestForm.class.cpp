@@ -22,20 +22,21 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 
 RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const & rhs)
 {
+	(void)rhs;
 	return (*this);
 }
 
-RobotomyRequestForm::RobotomyRequestForm(void): Form("General", "Shrubbery", RobotomyRequestForm::_sign, RobotomyRequestForm::_exec)
+RobotomyRequestForm::RobotomyRequestForm(void): Form("General", "Shrubbery", RobotomyRequestForm::_sign, RobotomyRequestForm::_execute)
 {
 	return;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target): Form(target, "Shrubbery", RobotomyRequestForm::_sign, RobotomyRequestForm::_exec)
+RobotomyRequestForm::RobotomyRequestForm(std::string target): Form(target, "Shrubbery", RobotomyRequestForm::_sign, RobotomyRequestForm::_execute)
 {
 	return;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & src): Form("Anonymous", "Shrubbery", RobotomyRequestForm::_sign, RobotomyRequestForm::_exec)
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & src): Form("Anonymous", "Shrubbery", RobotomyRequestForm::_sign, RobotomyRequestForm::_execute)
 {
 	*this = src;
 	return;

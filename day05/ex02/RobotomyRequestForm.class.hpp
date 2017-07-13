@@ -6,28 +6,28 @@
  * Author: Tony Hendrick
  * ==========================================================================*/
 
-#ifndef SHRUBBERY_CREATION_FORM_HPP
-# define SHRUBBERY_CREATION_FORM_HPP
+#ifndef ROBOTOMY_REQUEST_FORM_HPP
+# define ROBOTOMY_REQUEST_FORM_HPP
 
 #include <iostream>
 #include <string>
 #include "Form.class.hpp"
 #include "Bureaucrat.class.hpp"
 
-class ShrubberyCreationForm : public Form
+class RobotomyRequestForm : public Form
 {
 public:
-	ShrubberyCreationForm(void);
-	ShrubberyCreationForm(std::string target);
-	ShrubberyCreationForm(ShrubberyCreationForm const & src);
-	~ShrubberyCreationForm(void);
+	RobotomyRequestForm(void);
+	RobotomyRequestForm(std::string target);
+	RobotomyRequestForm(RobotomyRequestForm const & src);
+	~RobotomyRequestForm(void);
 
-	ShrubberyCreationForm & operator=(ShrubberyCreationForm const & rhs);
+	RobotomyRequestForm & operator=(RobotomyRequestForm const & rhs);
 
 	void execute(Bureaucrat const & executor) const;
 private:
 	static const int _sign;
 	static const int _execute;
-}
+};
 
 #endif

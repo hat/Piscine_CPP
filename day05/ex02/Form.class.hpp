@@ -16,11 +16,13 @@ class Bureaucrat;
 
 class Form {
 public:
+	std::string getTarget(void) const;
 	std::string getName(void) const;
 	bool getIsSigned(void) const;
 	int getMaxGradeSign(void) const;
 	int getMaxGradeExecute(void) const;
 
+	void setTarget(std::string target);
 	void setName(std::string name);
 	void setIsSigned(bool sign);
 	void setMaxGradeSign(int maxGrade);
@@ -32,10 +34,13 @@ public:
 	virtual void execute(Bureaucrat const & executor) const = 0;
 
 	Form & operator=(Form const & rhs);
+
+	Form(std::string target, std::string name, int gradeSign, int gradeExecute);
 	Form(void);
 	Form(Form const & src);
 	~Form(void);
 private:
+	std::string _target;
 	std::string _name;
 	bool _signed;
 	int _maxGradeSign;

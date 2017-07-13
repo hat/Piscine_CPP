@@ -43,6 +43,20 @@ void Bureaucrat::signForm(Form & form)
 	        << " due to not being the right grade.";
 }
 
+void Bureaucrat::executeForm(Form const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->_name << " executes " << form.getName();
+	}
+	catch (std::exception & e)
+	{
+		std::cout << this->_name << " cannot execute " << form.getName() << "ERROR: "
+				<< e.what();
+	}
+}
+
 Bureaucrat::Bureaucrat(std::string name): _name(name)
 {
 	this->_grade = 150;
