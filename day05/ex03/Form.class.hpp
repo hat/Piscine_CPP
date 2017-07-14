@@ -36,6 +36,8 @@ public:
 
 	Form & operator=(Form const & rhs);
 
+	Form(std::string target);
+	Form(std::string target, std::string name);
 	Form(std::string target, std::string name, int gradeSign, int gradeExecute);
 	Form(void);
 	Form(Form const & src);

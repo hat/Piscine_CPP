@@ -3,6 +3,7 @@ SRC		=	Bureaucrat.class.cpp Form.class.cpp \
 			PresidentialPardonForm.class.cpp \
 			RobotomyRequestForm.class.cpp \
 			ShrubberyCreationForm.class.cpp \
+			Intern.class.cpp \
 			main.cpp
 OBJ		=	$(SRC:.cpp=.o)
 FLAGS	=	-Wall -Wextra -Werror

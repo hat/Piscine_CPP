@@ -78,28 +78,5 @@ int main()
 		std::cout << "That's lower than dirt!" << std::endl;
 	}
 
-	Form law;
-	Bureaucrat crat("Bob", 145);
-	
-	try
-	{
-		std::cout << law << std::endl;
-		law.beSigned(crat);
-		std::cout << law << std::endl;
-	}
-	catch (Bureaucrat::GradeTooLowException e)
-	{
-		std::cout << "He can't sign that!" << std::endl;
-	}
-
-	try
-	{
-		ShrubberyCreationForm scf;
-		scf.execute();
-	}
-	catch (std::exception e)
-	{
-		std::cout << e.what();
-	}
 	return (0);
 }

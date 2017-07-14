@@ -105,6 +105,19 @@ Form & Form::operator=(Form const & rhs)
 	return (*this);
 }
 
+Form::Form(std::string target)
+{
+	this->_initValues();
+	this->_target = target;
+}
+
+Form::Form(std::string target, std::string name) 
+{
+	this->_initValues();
+	this->_target = target;
+	this->_name = name;
+}
+
 Form::Form(std::string target, std::string name, int gradeSign, int gradeExecute) : _target(target),
 								_name(name), _maxGradeSign(gradeSign), _maxGradeExecute(gradeExecute)
 {
