@@ -13,11 +13,11 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	Form::execute(executor);
 	int success = rand() % 2;
 
-	std::cout << "\a\a\a\a\aRizzzzz \a Rizzzzz";
+	std::cout << "\a\a\a\a\aRizzzzz \a Rizzzzz... ";
 	if (success)
-		std::cout << "Success!";
+		std::cout << "Success!" << std::endl;
 	else
-		std::cout << "Failure!";
+		std::cout << "Failure!" << std::endl;
 }
 
 RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const & rhs)

@@ -11,6 +11,58 @@
 #include "Bureaucrat.class.hpp"
 #include "Form.class.hpp"
 
+/* ============================ */
+/* 	  GradeTooHighException		*/
+/* ============================ */
+
+const char * Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Bureaucrat has a maximum grade of 150");
+}
+
+Bureaucrat::GradeTooHighException & Bureaucrat::GradeTooHighException::operator=(GradeTooHighException const & rhs)
+{
+	(void)rhs;
+	return (*this);
+}
+
+Bureaucrat::GradeTooHighException::GradeTooHighException(void) { return; }
+
+Bureaucrat::GradeTooHighException::GradeTooHighException(GradeTooHighException const & src)
+{
+	*this = src;
+}
+
+Bureaucrat::GradeTooHighException::~GradeTooHighException(void) throw() { return; }
+
+/* ============================ */
+/* 	  GradeTooLowException		*/
+/* ============================ */
+
+const char * Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Bureaucrat has a minimum grade of 1");
+}
+
+Bureaucrat::GradeTooLowException & Bureaucrat::GradeTooLowException::operator=(GradeTooLowException const & rhs)
+{
+	(void)rhs;
+	return (*this);
+}
+
+Bureaucrat::GradeTooLowException::GradeTooLowException(void) { return; }
+
+Bureaucrat::GradeTooLowException::GradeTooLowException(GradeTooLowException const & src)
+{
+	*this = src;
+}
+
+Bureaucrat::GradeTooLowException::~GradeTooLowException(void) throw() { return; }
+
+/* ============================ */
+/* 	 END OF EXCEPTION CLASSES	*/
+/* ============================ */
+
 void Bureaucrat::incrementGrade(int grade)
 {
 	if (this->_grade + grade > 150)

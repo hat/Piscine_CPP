@@ -11,10 +11,39 @@
 #include "Form.class.hpp"
 #include "Bureaucrat.class.hpp"
 
+
+/* ============================ */
+/* 	  CanNotSignException		*/
+/* ============================ */
+
+const char * Form::CanNotSignException::what() const throw()
+{
+	return ("Unable to sign the form due to grade and execute level.");
+}
+
+Form::CanNotSignException & Form::CanNotSignException::operator=(CanNotSignException const & rhs)
+{
+	(void)rhs;
+	return (*this);
+}
+
+Form::CanNotSignException::CanNotSignException(void) { return; }
+
+Form::CanNotSignException::CanNotSignException(CanNotSignException const & src)
+{
+	*this = src;
+}
+
+Form::CanNotSignException::~CanNotSignException(void) throw() { return; }
+
 std::string Form::getTarget(void) const
 {
 	return (this->_target);
 }
+
+/* ============================ */
+/* 	      End Excpetions   		*/
+/* ============================ */
 
 std::string Form::getName(void) const
 {
@@ -129,7 +158,8 @@ Form::~Form(void)
 std::ostream & operator<<(std::ostream & o, Form const & i)
 {
 	o << i.getName() << "; signed: " << i.getIsSigned() << "; maxGradeSign: "
-		<< i.getMaxGradeSign() << "; maxGradeExecute: " << i.getMaxGradeExecute();
+		<< i.getMaxGradeSign() << "; maxGradeExecute: " << i.getMaxGradeExecute()
+		<< std::endl;
 
 	return (o);
 }

@@ -18,64 +18,37 @@ int main()
 {
 	try
 	{
-		Bureaucrat crat("Bob", 150);	
-		std::cout << crat << std::endl;
+		Bureaucrat bob(150);
+		PresidentialPardonForm ppf("ppf");
+		RobotomyRequestForm rrf("rrf");
+		ShrubberyCreationForm scf("scf");
 
-		crat.decrementGrade(5);
-		std::cout << crat << std::endl;
+		bob.decrementGrade(149);
 
-		crat.incrementGrade(3);
-		std::cout << crat << std::endl;
-	}
-	catch (Bureaucrat::GradeTooHighException e)
-	{
-		std::cout << "Too High!" << std::endl;
-	}
+		bob.signForm(ppf);
+		ppf.execute(bob);
 
-	try
-	{
-		Bureaucrat crat("Bob", 155);	
-		std::cout << crat << std::endl;
-	}
-	catch (Bureaucrat::GradeTooHighException e)
-	{
-		std::cout << "That's way too High!" << std::endl;
-	}
+		bob.signForm(rrf);
+		rrf.execute(bob);
 
-	try
-	{
-		Bureaucrat crat("Bob", 0);	
-		std::cout << crat << std::endl;
+		bob.signForm(scf);
+		scf.execute(bob);
 	}
-	catch (Bureaucrat::GradeTooLowException e)
+	catch(Form::CanNotSignException e)
 	{
-		std::cout << "That's too low!" << std::endl;
+		std::cout << "ERROR: " << e.what() << std::endl;
 	}
-
-	try
+	catch(Bureaucrat::GradeTooHighException e)
 	{
-		Bureaucrat crat("Bob", 145);	
-		std::cout << crat << std::endl;
-
-		crat.incrementGrade(6);
-		std::cout << crat << std::endl;
+		std::cout << "ERROR: " << e.what() << std::endl;
 	}
-	catch (Bureaucrat::GradeTooHighException e)
+	catch(Bureaucrat::GradeTooLowException e)
 	{
-		std::cout << "That's high as can be!" << std::endl;
+		std::cout << "ERROR: " << e.what() << std::endl;
 	}
-
-	try
+	catch(std::exception e)
 	{
-		Bureaucrat crat("Bob", 9);	
-		std::cout << crat << std::endl;
-
-		crat.decrementGrade(10);
-		std::cout << crat << std::endl;
-	}
-	catch (Bureaucrat::GradeTooLowException e)
-	{
-		std::cout << "That's lower than dirt!" << std::endl;
+		std::cout << "ERROR: " << e.what() << std::endl;
 	}
 
 	return (0);

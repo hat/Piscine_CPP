@@ -36,17 +36,21 @@ public:
 
 	class GradeTooHighException : public std::exception
 	{
-		virtual const char* what() const throw()
-		{
-			return ("Bureaucrat has a maximum grade of 150");
-		}
+		public:
+			virtual const char * what() const throw();
+			GradeTooHighException & operator=(GradeTooHighException const & rhs);
+			GradeTooHighException(void);
+			GradeTooHighException(GradeTooHighException const & src);
+			virtual ~GradeTooHighException(void) throw();
 	};
 	class GradeTooLowException : public std::exception
 	{
-		virtual const char* what() const throw()
-		{
-			return ("Bureaucrat has a minimum grade of 1");
-		}
+		public:
+			virtual const char * what() const throw();
+			GradeTooLowException & operator=(GradeTooLowException const & rhs);
+			GradeTooLowException(void);
+			GradeTooLowException(GradeTooLowException const & src);
+			virtual ~GradeTooLowException(void) throw();
 	};
 
 private:

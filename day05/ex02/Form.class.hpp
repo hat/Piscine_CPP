@@ -43,10 +43,12 @@ public:
 
 	class CanNotSignException : public std::exception
 	{
-		virtual const char* what() const throw()
-		{
-			return ("Unable to sign the form fue to grade and execute level.");
-		}
+		public:
+			virtual const char * what() const throw();
+			CanNotSignException & operator=(CanNotSignException const & rhs);
+			CanNotSignException(void);
+			CanNotSignException(CanNotSignException const & src);
+			virtual ~CanNotSignException(void) throw();
 	};
 private:
 	std::string _target;
