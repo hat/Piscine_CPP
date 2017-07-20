@@ -14,6 +14,39 @@
 #include "RobotomyRequestForm.class.hpp"
 #include "ShrubberyCreationForm.class.hpp"
 
+/* ============================ */
+/* 	  NoExistingForm		*/
+/* ============================ */
+
+const char * Form::NoExistingForm::what() const throw()
+{
+	return ("No existing form with that name.");
+}
+
+Form::NoExistingForm & Form::NoExistingForm::operator=(NoExistingForm const & rhs)
+{
+	(void)rhs;
+	return (*this);
+}
+
+Form::NoExistingForm::NoExistingForm(void) { return; }
+
+Form::NoExistingForm::NoExistingForm(NoExistingForm const & src)
+{
+	*this = src;
+}
+
+Form::NoExistingForm::~NoExistingForm(void) throw() { return; }
+
+std::string Form::getTarget(void) const
+{
+	return (this->_target);
+}
+
+/* ============================ */
+/* 	      End Excpetions   		*/
+/* ============================ */
+
 Form * Intern::makeForm(std::string name, std::string target)
 {
 	Form *newForm;
